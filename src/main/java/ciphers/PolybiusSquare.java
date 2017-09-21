@@ -3,8 +3,7 @@ package ciphers;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PolybiusSquare implements Cipher {
-    public static int SIDE_LENGTH = 5;
+public class PolybiusSquare extends Cipher {
     Map<Character, String> polibiusMap = new HashMap<>();
 
     public PolybiusSquare() {
@@ -41,11 +40,11 @@ public class PolybiusSquare implements Cipher {
         StringBuffer encrypted = new StringBuffer();
         for (int i = 0, n = word.length(); i < n; i++) {
             char current = word.charAt(i);
-            encrypted.append(polibiusMap.get(current) + " ");
-            System.out.println(current + "->" + polibiusMap.get(current));
-            System.out.println("On step " + i + " word is: " + encrypted);
+            String encryptedChar = polibiusMap.get(current);
+            encrypted.append(encryptedChar + " ");
+            tableOfChange.put(String.valueOf(current), encryptedChar);
             System.out.println();
         }
-        return encrypted.substring(0, encrypted.length() - 1).toString();
+        return encrypted.toString().trim();
     }
 }

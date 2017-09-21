@@ -10,6 +10,7 @@ public abstract class CipherTest {
 
     @Test
     public void encryptSurname() {
-        assert cipher.encrypt(word).equals(result);
+        String encrypted = cipher.encrypt(word);
+        assert encrypted.equals(result);
     }
 }

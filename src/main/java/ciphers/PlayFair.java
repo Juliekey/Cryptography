@@ -6,10 +6,8 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlayFair implements Cipher {
+public class PlayFair extends Cipher {
     public final static int SIZE = 5;
-    public final static String SPACE = " ";
-
     public final static char[][] chars =
             {{'c', 'i', 'p', 'h', 'e'},
                     {'r', 'a', 'b', 'd', 'f'},
@@ -18,11 +16,12 @@ public class PlayFair implements Cipher {
                     {'v', 'w', 'x', 'y', 'z'}};
     public static final char REPLACEMENT = 'x';
 
+    public PlayFair() {
+        key = "cipher";
+    }
+
     public String encrypt(String word) {
-        System.out.println("Key: cipher");
-        System.out.println("Word: " + word);
         List<Pair<Character, Character>> pairs = splitToPairs(word);
-        System.out.println("Pairs of letters: " + pairs);
         StringBuffer result = new StringBuffer();
         for (Pair<Character, Character> pair :
                 pairs) {
@@ -54,14 +53,12 @@ public class PlayFair implements Cipher {
                 newChar1 = chars[(int) p1.getX()][(int) p2.getY()];
                 newChar2 = chars[(int) p2.getX()][(int) p1.getY()];
             }
-            System.out.println(pair.getKey() + "->" + newChar1);
-            System.out.println(pair.getValue() + "->" + newChar2);
-
-            result.append(String.valueOf(newChar1) + String.valueOf(newChar2) + SPACE);
+            tableOfChange.put(String.valueOf(pair.getKey()), String.valueOf(newChar1));
+            tableOfChange.put(String.valueOf(pair.getValue()), String.valueOf(newChar2));
+            result.append(String.valueOf(newChar1) + String.valueOf(newChar2) + Constants.SPACE);
         }
 
 
-        System.out.println(result);
         return result.toString().trim();
     }
 

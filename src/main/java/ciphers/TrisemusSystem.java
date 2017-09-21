@@ -1,6 +1,10 @@
 package ciphers;
 
-public class TrisemusSystem implements Cipher {
+public class TrisemusSystem extends Cipher {
+    public TrisemusSystem() {
+        key = "трисемус";
+    }
+
     public final static int SIDE = 6;
     private static char[][] matrix =
             {{'т', 'р', 'и', 'с', 'е', 'м'},
@@ -12,8 +16,6 @@ public class TrisemusSystem implements Cipher {
 
     public String encrypt(String word) {
         StringBuffer encrypted = new StringBuffer();
-        System.out.println("Key: трисему(с)");
-        System.out.println("Word:" + word);
         for (int i = 0, n = word.length(); i < n; i++) {
             for (int j = 0; j < SIDE; j++) {
                 boolean found = false;
@@ -25,8 +27,7 @@ public class TrisemusSystem implements Cipher {
                                 matrix[0][k] : matrix[j + 1][k];
 
                         encrypted.append(newChar);
-                        System.out.println(word.charAt(i) + "- >" + newChar);
-                        System.out.println("Word at step " + i + " is " + encrypted);
+                        tableOfChange.put(String.valueOf(word.charAt(i)), String.valueOf(newChar));
                         found = true;
                         break;
                     }

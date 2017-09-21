@@ -1,18 +1,19 @@
 package ciphers;
 
-public class Hill implements Cipher {
-    private static final String KEY = "gybnqkurp";
+public class Hill extends Cipher {
 
     private static final int SIZE = 3;
 
 
     private int[][] keyMatrix = {{6, 24, 1}, {13, 16, 10}, {20, 17, 15}};
 
+    public Hill() {
+        key = "gybnqkurp";
+    }
+
     @Override
     public String encrypt(String word) {
         word = word.toLowerCase();
-        System.out.println("Key: " + KEY);
-        System.out.println("Word: " + word);
         StringBuffer result = new StringBuffer();
         int n = word.length();
         for (int i = 0; i < n; ) {
@@ -26,7 +27,6 @@ public class Hill implements Cipher {
                 result.append(Constants.SPACE);
             }
         }
-        System.out.println(result);
         return result.toString();
     }
 
@@ -37,7 +37,7 @@ public class Hill implements Cipher {
         for (int i = 0, n = hillVector.length; i < n; i++) {
             char encryptedChar = (char) (hillVector[i] + Constants.LC_A_ASCII_INDEX);
             result.append(encryptedChar);
-            System.out.println(substring.charAt(i) + "->" + encryptedChar);
+            tableOfChange.put(String.valueOf(substring.charAt(i)), String.valueOf(encryptedChar));
         }
         return result.toString();
     }
