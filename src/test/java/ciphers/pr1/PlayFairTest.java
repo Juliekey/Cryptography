@@ -1,5 +1,7 @@
-package ciphers;
+package ciphers.pr1;
 
+import ciphers.CipherTest;
+import ciphers.pr1.PlayFair;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 

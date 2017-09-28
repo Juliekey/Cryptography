@@ -1,4 +1,6 @@
-package ciphers;
+package ciphers.pr1;
+
+import ciphers.Cipher;
 
 public class TrisemusSystem extends Cipher {
     public TrisemusSystem() {

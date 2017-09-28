@@ -1,4 +1,7 @@
-package ciphers;
+package ciphers.pr1;
+
+import ciphers.Cipher;
+import ciphers.Constants;
 
 public class Ceasar extends Cipher {
 

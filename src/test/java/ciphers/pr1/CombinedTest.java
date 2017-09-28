@@ -1,8 +1,8 @@
-package ciphers;
+package ciphers.pr1;
 
+import ciphers.CipherTest;
+import ciphers.pr1.Combined;
 import org.junit.jupiter.api.BeforeAll;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CombinedTest extends CipherTest {
     @BeforeAll

@@ -1,4 +1,7 @@
-package ciphers;
+package ciphers.pr1;
+
+import ciphers.Cipher;
+import ciphers.Constants;
 
 public class Lozung extends Cipher {
     public static char[] chars = {'c', 'i', 'p', 'h', 'e', 'r', 'a', 'b', 'd', 'f', 'g', 'j', 'k',
