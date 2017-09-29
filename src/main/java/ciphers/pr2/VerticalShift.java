@@ -1,6 +1,7 @@
 package ciphers.pr2;
 
 import ciphers.Cipher;
+import ciphers.util.TableHelper;
 
 public class VerticalShift extends Cipher {
     private static final int[] orderOfCiphering = {0, 4, 3, 1, 2, 5};
@@ -14,7 +15,7 @@ public class VerticalShift extends Cipher {
 
     @Override
     public String encrypt(String word) {
-        char[][] wordInTable = getTableWithWord(word);
+        char[][] wordInTable = TableHelper.fillTableWithWord(word, TABLE_SIZE, DEFAULT);
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < TABLE_SIZE; i++) {
             int column = orderOfCiphering[i];
@@ -27,21 +28,5 @@ public class VerticalShift extends Cipher {
     }
 
 
-    private char[][] getTableWithWord(String word) {
-        int n = word.length();
-        int charIndex = 0;
-        char[][] wordInTable = new char[TABLE_SIZE][TABLE_SIZE];
-        for (int i = 0; i < TABLE_SIZE; i++) {
-            for (int j = 0; j < TABLE_SIZE; j++) {
-                if (charIndex < n) {
-                    wordInTable[i][j] = word.charAt(charIndex);
-                    charIndex++;
-                } else {
-                    wordInTable[i][j] = DEFAULT;
-                }
-            }
 
-        }
-        return wordInTable;
-    }
 }
