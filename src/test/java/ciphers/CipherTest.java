@@ -1,6 +1,5 @@
 package ciphers;
 
-import ciphers.Cipher;
 import org.junit.jupiter.api.Test;
 
 public abstract class CipherTest {
