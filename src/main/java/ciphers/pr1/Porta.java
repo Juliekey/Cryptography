@@ -2,6 +2,7 @@ package ciphers.pr1;
 
 import ciphers.Cipher;
 import ciphers.Constants;
+import javafx.util.Pair;
 
 public class Porta extends Cipher {
     private int keyLength;
@@ -33,7 +34,7 @@ public class Porta extends Cipher {
             int kedIndex = (key.charAt(i % keyLength) % Constants.LC_A_ASCII_INDEX) / 2;
             char newChar = arr[kedIndex][wordIndex];
             result.append(newChar);
-            tableOfChange.put(String.valueOf(word.charAt(i)), String.valueOf(newChar));
+            tableOfChange.add(new Pair<String, String>(String.valueOf(word.charAt(i)), String.valueOf(newChar)));
         }
         System.out.println(result);
         return result.toString();

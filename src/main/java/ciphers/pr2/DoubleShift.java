@@ -2,6 +2,7 @@ package ciphers.pr2;
 
 import ciphers.Cipher;
 import ciphers.util.TableHelper;
+import javafx.util.Pair;
 
 public class DoubleShift extends Cipher {
     private static final int TABLE_SIZE = 4;
@@ -26,7 +27,7 @@ public class DoubleShift extends Cipher {
             for (int j = 0; j < TABLE_SIZE; j++) {
                 char newChar = table[i][j];
                 if (wordIndex < n) {
-                    tableOfChange.put(String.valueOf(word.charAt(wordIndex)), String.valueOf(newChar));
+                    tableOfChange.add(new Pair<String, String>(String.valueOf(word.charAt(wordIndex)), String.valueOf(newChar)));
                     wordIndex++;
                 }
                 result.append(newChar);

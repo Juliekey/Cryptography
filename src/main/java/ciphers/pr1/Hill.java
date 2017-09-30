@@ -2,6 +2,7 @@ package ciphers.pr1;
 
 import ciphers.Cipher;
 import ciphers.Constants;
+import javafx.util.Pair;
 
 public class Hill extends Cipher {
 
@@ -40,7 +41,7 @@ public class Hill extends Cipher {
         for (int i = 0, n = hillVector.length; i < n; i++) {
             char encryptedChar = (char) (hillVector[i] + Constants.LC_A_ASCII_INDEX);
             result.append(encryptedChar);
-            tableOfChange.put(String.valueOf(substring.charAt(i)), String.valueOf(encryptedChar));
+            tableOfChange.add(new Pair<String, String>(String.valueOf(substring.charAt(i)), String.valueOf(encryptedChar)));
         }
         return result.toString();
     }

@@ -2,7 +2,9 @@ package ciphers.pr2;
 
 import ciphers.Cipher;
 import ciphers.Constants;
+import javafx.util.Pair;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -11,7 +13,7 @@ public class BlockShift extends Cipher {
     private static final int BLOCK_SIZE = BLOCK_OF_CHANGES.length;
 
     public BlockShift() {
-        key = BLOCK_OF_CHANGES.toString();
+        key = Arrays.toString(BLOCK_OF_CHANGES);
     }
 
     @Override
@@ -30,7 +32,7 @@ public class BlockShift extends Cipher {
             for (int j = 0; j < BLOCK_SIZE; j++) {
                 int indexOfReplacedChar = i + BLOCK_OF_CHANGES[j];
                 String newSymbol = String.valueOf(original.charAt(j));
-                tableOfChange.put(String.valueOf(original.charAt(BLOCK_OF_CHANGES[j])), newSymbol);
+                tableOfChange.add(new Pair<String, String>(String.valueOf(original.charAt(BLOCK_OF_CHANGES[j])), newSymbol));
                 result.replace(indexOfReplacedChar, indexOfReplacedChar + 1, newSymbol);
             }
         }

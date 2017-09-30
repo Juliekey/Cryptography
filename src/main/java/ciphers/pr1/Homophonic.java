@@ -2,6 +2,7 @@ package ciphers.pr1;
 
 import ciphers.Cipher;
 import ciphers.Constants;
+import javafx.util.Pair;
 
 import java.util.Random;
 
@@ -50,7 +51,7 @@ public class Homophonic extends Cipher {
             int index = Constants.ALPHABET.indexOf(current);
             char encryptedChar = variants[index][rnd.nextInt(variants[index].length)];
             encrypted.append(encryptedChar);
-            tableOfChange.put(String.valueOf(current), String.valueOf(encryptedChar));
+            tableOfChange.add(new Pair<String, String>(String.valueOf(current), String.valueOf(encryptedChar)));
         }
         return encrypted.toString();
     }

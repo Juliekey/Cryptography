@@ -2,6 +2,7 @@ package ciphers.pr1;
 
 import ciphers.Cipher;
 import ciphers.Constants;
+import javafx.util.Pair;
 
 public class Ceasar extends Cipher {
 
@@ -13,7 +14,7 @@ public class Ceasar extends Cipher {
             int index = Constants.ALPHABET.indexOf(current);
             char encryptedChar = Constants.ALPHABET.charAt((index+shift)% ciphers.Constants.EN_ALPHABET_CNT);
             encrypted.append(encryptedChar);
-            tableOfChange.put(String.valueOf(current), String.valueOf(encryptedChar));
+            tableOfChange.add(new Pair<String, String>(String.valueOf(current), String.valueOf(encryptedChar)));
         }
         return encrypted.toString();
     }

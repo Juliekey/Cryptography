@@ -1,6 +1,7 @@
 package ciphers.pr1;
 
 import ciphers.Cipher;
+import javafx.util.Pair;
 
 public class TrisemusSystem extends Cipher {
     public TrisemusSystem() {
@@ -29,7 +30,7 @@ public class TrisemusSystem extends Cipher {
                                 matrix[0][k] : matrix[j + 1][k];
 
                         encrypted.append(newChar);
-                        tableOfChange.put(String.valueOf(word.charAt(i)), String.valueOf(newChar));
+                        tableOfChange.add(new Pair<String, String>(String.valueOf(word.charAt(i)), String.valueOf(newChar)));
                         found = true;
                         break;
                     }

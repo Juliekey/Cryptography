@@ -1,6 +1,7 @@
 package ciphers.pr2;
 
 import ciphers.Cipher;
+import javafx.util.Pair;
 
 import java.awt.*;
 import java.util.Arrays;
@@ -41,7 +42,7 @@ public class MagicSquare extends Cipher {
             for (int j = 0; j < SQUARE_SIZE; j++) {
                 char newChar = writtenWord[i][j];
                 if (newChar != DEFAULT_CHAR_VALUE) {
-                    tableOfChange.put(String.valueOf(word.charAt(wordLetterIndex)), String.valueOf(newChar));
+                    tableOfChange.add(new Pair<String, String>(String.valueOf(word.charAt(wordLetterIndex)), String.valueOf(newChar)));
                     wordLetterIndex++;
                     result.append(newChar);
                 } else {

@@ -55,8 +55,8 @@ public class PlayFair extends Cipher {
                 newChar1 = chars[(int) p1.getX()][(int) p2.getY()];
                 newChar2 = chars[(int) p2.getX()][(int) p1.getY()];
             }
-            tableOfChange.put(String.valueOf(pair.getKey()), String.valueOf(newChar1));
-            tableOfChange.put(String.valueOf(pair.getValue()), String.valueOf(newChar2));
+            tableOfChange.add(new Pair<String, String>(String.valueOf(pair.getKey()), String.valueOf(newChar1)));
+            tableOfChange.add(new Pair<String, String>(String.valueOf(pair.getValue()), String.valueOf(newChar2)));
             result.append(String.valueOf(newChar1) + String.valueOf(newChar2) + Constants.SPACE);
         }
 
