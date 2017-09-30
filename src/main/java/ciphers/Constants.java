@@ -8,5 +8,6 @@ public class Constants {
     public final static int EN_ALPHABET_CNT = 26;
     public static final Character SPACE = ' ';
     public static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
+    public static final char DEFAULT_CHAR_VALUE = '\u0000';
 
 }

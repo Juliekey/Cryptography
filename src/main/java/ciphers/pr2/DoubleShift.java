@@ -1,7 +1,7 @@
 package ciphers.pr2;
 
 import ciphers.Cipher;
-import ciphers.util.TableHelper;
+import ciphers.util.ArraysHelper;
 import javafx.util.Pair;
 
 public class DoubleShift extends Cipher {
@@ -14,12 +14,12 @@ public class DoubleShift extends Cipher {
 
     @Override
     public String encrypt(String word) {
-        char[][] table = TableHelper.fillTableWithWord(word, TABLE_SIZE, REPLACEMENT);
-        exchangeRows(table, 0, 1);
-        exchangeRows(table, 1, 3);
-        exchangeColumns(table, 2, 3);
-        exchangeColumns(table, 1, 2);
-        exchangeColumns(table, 0, 1);
+        Character[][] table = ArraysHelper.fillArrWIthWord(word, TABLE_SIZE, REPLACEMENT);
+        ArraysHelper.exchangeRows(table, 0, 1);
+        ArraysHelper.exchangeRows(table, 1, 3);
+        ArraysHelper.exchangeColumns(table, 2, 3);
+        ArraysHelper.exchangeColumns(table, 1, 2);
+        ArraysHelper.exchangeColumns(table, 0, 1);
         StringBuffer result = new StringBuffer();
         int wordIndex = 0;
         int n = word.length();
@@ -37,20 +37,7 @@ public class DoubleShift extends Cipher {
         return result.toString();
     }
 
-    private void exchangeColumns(char[][] table, int c1, int c2) {
-        for (int j = 0; j < TABLE_SIZE; j++) {
-            char temp = table[j][c1];
-            table[j][c1] = table[j][c2];
-            table[j][c2] = temp;
-        }
-    }
 
-    private void exchangeRows(char[][] table, int r1, int r2) {
-        for (int j = 0; j < TABLE_SIZE; j++) {
-            char temp = table[r1][j];
-            table[r1][j] = table[r2][j];
-            table[r2][j] = temp;
-        }
 
-    }
+
 }
