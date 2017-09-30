@@ -1,8 +1,8 @@
-package ciphers;
+package ciphers.pr1;
 
+import ciphers.CipherTest;
+import ciphers.pr1.Vizhiner;
 import org.junit.jupiter.api.BeforeEach;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class VizhinerTest extends CipherTest {
     @BeforeEach

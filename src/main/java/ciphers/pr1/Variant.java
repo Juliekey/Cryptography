@@ -1,9 +1,12 @@
-package ciphers;
+package ciphers.pr1;
+
+import ciphers.Cipher;
+import ciphers.Constants;
 
 import java.util.ArrayDeque;
 import java.util.Random;
 
-public class Variant extends Cipher{
+public class Variant extends Cipher {
 
     private static char[][] upper = {{'q', 'e', 't', 'u', 'o', 'a'}, {'w', 'r', 'y', 'i', 'p', 's'}};
     private static char[][] side = {{'d', 'g', 'j', 'l', 'x'}, {'f', 'h', 'k', 'z', 'c'}};

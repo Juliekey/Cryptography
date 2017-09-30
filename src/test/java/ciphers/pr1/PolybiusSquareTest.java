@@ -1,6 +1,8 @@
-package ciphers;
+package ciphers.pr1;
 
 
+import ciphers.CipherTest;
+import ciphers.pr1.PolybiusSquare;
 import org.junit.jupiter.api.BeforeAll;
 
 class PolybiusSquareTest extends CipherTest {

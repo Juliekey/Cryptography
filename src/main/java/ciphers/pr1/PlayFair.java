@@ -1,5 +1,7 @@
-package ciphers;
+package ciphers.pr1;
 
+import ciphers.Cipher;
+import ciphers.Constants;
 import javafx.util.Pair;
 
 import java.awt.*;

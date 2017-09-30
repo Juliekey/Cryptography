@@ -1,9 +1,8 @@
-package ciphers;
+package ciphers.pr1;
 
+import ciphers.CipherTest;
+import ciphers.pr1.TrisemusSystem;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class TrisemusSystemTest extends CipherTest {
     @BeforeAll
