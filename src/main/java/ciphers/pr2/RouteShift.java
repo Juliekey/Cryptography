@@ -1,6 +1,8 @@
-package ciphers;
+package ciphers.pr2;
 
-public class RouteShift extends Cipher{
+import ciphers.Cipher;
+
+public class RouteShift extends Cipher {
     char[][] table = new char[4][5];
 
     private  void add(StringBuffer sb){

@@ -1,9 +1,10 @@
-package ciphers;
+package ciphers.pr2;
 
+import ciphers.CipherTest;
 import org.junit.jupiter.api.BeforeAll;
 
 
-class RouteShiftTest extends CipherTest{
+class RouteShiftTest extends CipherTest {
 
     @BeforeAll
     public static void init() {

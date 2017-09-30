@@ -1,8 +1,10 @@
-package ciphers;
+package ciphers.pr2;
+
+import ciphers.Cipher;
 
 import java.util.Random;
 
-public class SimpleShift extends Cipher{
+public class SimpleShift extends Cipher {
     private int[] order = {5, 2, 1, 3, 0, 4};
     Random rnd;
 /*
