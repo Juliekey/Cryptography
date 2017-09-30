@@ -2,6 +2,7 @@ package ciphers.pr1;
 
 import ciphers.Cipher;
 import ciphers.Constants;
+import javafx.util.Pair;
 
 import java.util.ArrayDeque;
 import java.util.Random;
@@ -48,7 +49,7 @@ public class Variant extends Cipher {
                     if (arr[i][j] == current) {
                         String encryptedChar = ""+side[rnd.nextInt(2)][i]+upper[rnd.nextInt(2)][j];
                         encrypted.append(encryptedChar);
-                        tableOfChange.put(String.valueOf(current), encryptedChar);
+                        tableOfChange.add(new Pair<String, String>(String.valueOf(current), encryptedChar));
                         count++;
                         break outerloop;
                     }

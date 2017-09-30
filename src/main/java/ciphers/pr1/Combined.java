@@ -2,6 +2,7 @@ package ciphers.pr1;
 
 import ciphers.Cipher;
 import ciphers.Constants;
+import javafx.util.Pair;
 
 public class Combined extends Cipher {
     private final static char[][] chars =
@@ -44,7 +45,7 @@ public class Combined extends Cipher {
             }
             result.append(newChar);
             result.append(Constants.SPACE);
-            tableOfChange.put(String.valueOf(currentChar), newChar);
+            tableOfChange.add(new Pair<String, String>(String.valueOf(currentChar), newChar));
         }
         System.out.println(result);
         return result.toString().trim();

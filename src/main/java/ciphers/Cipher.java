@@ -1,16 +1,14 @@
 package ciphers;
 
 
+import javafx.util.Pair;
 import lombok.Getter;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public abstract class Cipher {
     @Getter
-    protected Map<String, String> tableOfChange = new LinkedHashMap<>();
+    protected List<Pair<String, String>> tableOfChange = new LinkedList<>();
     @Getter
     protected String key;
 

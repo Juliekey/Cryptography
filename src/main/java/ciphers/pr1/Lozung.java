@@ -2,6 +2,7 @@ package ciphers.pr1;
 
 import ciphers.Cipher;
 import ciphers.Constants;
+import javafx.util.Pair;
 
 public class Lozung extends Cipher {
     public static char[] chars = {'c', 'i', 'p', 'h', 'e', 'r', 'a', 'b', 'd', 'f', 'g', 'j', 'k',
@@ -17,7 +18,7 @@ public class Lozung extends Cipher {
         for (int i = 0, n = word.length(); i < n; i++) {
             char encodedChar = chars[word.charAt(i) - Constants.LC_A_ASCII_INDEX];
             encoded.append(encodedChar);
-            tableOfChange.put(String.valueOf(word.charAt(i)), String.valueOf(encodedChar));
+            tableOfChange.add(new Pair<String, String>(String.valueOf(word.charAt(i)), String.valueOf(encodedChar)));
             System.out.println();
         }
         return encoded.toString();

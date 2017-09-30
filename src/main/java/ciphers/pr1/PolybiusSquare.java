@@ -1,6 +1,7 @@
 package ciphers.pr1;
 
 import ciphers.Cipher;
+import javafx.util.Pair;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -44,7 +45,7 @@ public class PolybiusSquare extends Cipher {
             char current = word.charAt(i);
             String encryptedChar = polibiusMap.get(current);
             encrypted.append(encryptedChar + " ");
-            tableOfChange.put(String.valueOf(current), encryptedChar);
+            tableOfChange.add(new Pair<String, String>(String.valueOf(current), encryptedChar));
             System.out.println();
         }
         return encrypted.toString().trim();

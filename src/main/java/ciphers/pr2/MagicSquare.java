@@ -1,6 +1,9 @@
 package ciphers.pr2;
 
 import ciphers.Cipher;
+import ciphers.Constants;
+import ciphers.util.ArraysHelper;
+import javafx.util.Pair;
 
 import java.awt.*;
 import java.util.Arrays;
@@ -12,7 +15,7 @@ public class MagicSquare extends Cipher {
     private static Map<Integer, Point> coordinates = new HashMap<>();
     private static final int SQUARE_SIZE = 4;
     private static final char REPLACEMENT = '.';
-    private static final char DEFAULT_CHAR_VALUE = '\u0000';
+
 
     public MagicSquare() {
         key = Arrays.deepToString(MAGIC_SQUARE);
@@ -37,14 +40,17 @@ public class MagicSquare extends Cipher {
             writtenWord[(int) point.getX()][(int) point.getY()] = word.charAt(i);
         }
         int wordLetterIndex = 0;
+        Character[][] originalTable = ArraysHelper.fillArrWIthWord(word, 4, REPLACEMENT);
         for (int i = 0; i < SQUARE_SIZE; i++) {
             for (int j = 0; j < SQUARE_SIZE; j++) {
                 char newChar = writtenWord[i][j];
-                if (newChar != DEFAULT_CHAR_VALUE) {
-                    tableOfChange.put(String.valueOf(word.charAt(wordLetterIndex)), String.valueOf(newChar));
+                if (newChar != Constants.DEFAULT_CHAR_VALUE) {
+                    tableOfChange.add(new Pair<String, String>(String.valueOf(originalTable[i][j]), String.valueOf(newChar)));
                     wordLetterIndex++;
                     result.append(newChar);
                 } else {
+                    tableOfChange.add(new Pair<String, String>(String.valueOf(originalTable[i][j]), String.valueOf(REPLACEMENT)));
+
                     result.append(REPLACEMENT);
                 }
             }
