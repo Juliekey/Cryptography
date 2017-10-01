@@ -5,13 +5,13 @@ import entities.Cipher;
 import javafx.util.Pair;
 
 public class Ceasar extends Cipher {
-
+    int shift = 3;
     public Ceasar() {
         name = "Caesar";
+        key = String.valueOf(shift);
     }
 
     public String encrypt(String word) {
-        int shift = 3;
         StringBuffer encrypted = new StringBuffer();
         for (int i = 0, n = word.length(); i < n; i++) {
             char current = word.charAt(i);

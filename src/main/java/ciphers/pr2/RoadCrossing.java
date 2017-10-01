@@ -2,6 +2,9 @@ package ciphers.pr2;
 
 import com.sun.jmx.remote.internal.ArrayQueue;
 import entities.Cipher;
+import javafx.util.Pair;
+
+import java.util.Arrays;
 
 
 public class RoadCrossing extends Cipher {
@@ -11,10 +14,12 @@ public class RoadCrossing extends Cipher {
     StringBuffer sb;
     int step = 2;
     int size;
+    String modified;
 
     public RoadCrossing() {
 
         name = "Road Crossing";
+        key = String.valueOf(step);
     }
 
     private void create(String word) {
@@ -25,8 +30,9 @@ public class RoadCrossing extends Cipher {
 
         sb = new StringBuffer(word);
         for (int i = 0; i < size * 4 - word.length(); i++) {
-            sb.append('-');
+            sb.append('_');
         }
+        modified = sb.toString();
         for (int i = 0; i < size * 4; i++) {
 
             if (i % 2 == 0) {
@@ -71,6 +77,10 @@ public class RoadCrossing extends Cipher {
             sb.append(bottom.get(0));
             bottom.remove(0);
         }
+        for (int k = 0; k < sb.length(); k++) {
+            tableOfChange.add(new Pair<String, String>(String.valueOf(modified.charAt(k)), String.valueOf(sb.charAt(k))));
+        }
+
         return sb.toString();
     }
 }

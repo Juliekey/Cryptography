@@ -1,6 +1,7 @@
 package ciphers.pr2;
 
 import com.sun.jmx.remote.internal.ArrayQueue;
+import javafx.util.Pair;
 
 import java.util.Map;
 import java.util.TreeMap;
@@ -14,14 +15,14 @@ public class Triangle extends entities.Cipher {
                {'d','e','_','_','_','_',}};
    */
     char[][] arr;
-    String key = "cipher";
     StringBuffer sb;
     ArrayQueue<Character> keyqueue;
     Map<Character , String> columns;
     StringBuffer column;
-
+    String modified;
     public Triangle() {
         name = "Triangle Cipher";
+        key = "cipher";
     }
 
 
@@ -36,6 +37,7 @@ public class Triangle extends entities.Cipher {
         for (int i =0; i < size-addition; i++){
             sb.append('_');
         }
+        modified = sb.toString();
         arr = new char[size][];
         int x = 0;
         for (int i = 0; i < arr.length; i++){
@@ -97,6 +99,9 @@ public class Triangle extends entities.Cipher {
         createMap();
         for (Map.Entry<Character , String> entry : columns.entrySet()) {
             sb.append(entry.getValue());
+        }
+        for (int k = 0; k < sb.length(); k++) {
+            tableOfChange.add(new Pair<String, String>(String.valueOf(modified.charAt(k)), String.valueOf(sb.charAt(k))));
         }
         return sb.toString();
     }

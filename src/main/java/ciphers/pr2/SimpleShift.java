@@ -1,7 +1,9 @@
 package ciphers.pr2;
 
 import entities.Cipher;
+import javafx.util.Pair;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class SimpleShift extends Cipher {
@@ -11,6 +13,7 @@ public class SimpleShift extends Cipher {
     public SimpleShift() {
 
         name = "Simple Shift";
+        key = Arrays.toString(order);
     }
 
     /*
@@ -34,7 +37,9 @@ public class SimpleShift extends Cipher {
         char[] result = new char[word.length()];
         for (int i = 0; i < word.length(); i++){
             result[order[i]] = word.charAt(i);
+            tableOfChange.add(new Pair<String, String>(String.valueOf(word.charAt(order[i])), String.valueOf(word.charAt(i))));
         }
+
         return String.valueOf(result);
     }
 }
