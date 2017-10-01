@@ -1,7 +1,7 @@
 package ciphers.pr2;
 
-import ciphers.Cipher;
 import ciphers.util.ArraysHelper;
+import entities.Cipher;
 import javafx.util.Pair;
 
 public class VerticalShift extends Cipher {
@@ -11,6 +11,7 @@ public class VerticalShift extends Cipher {
     private static final char DEFAULT = '_';
 
     public VerticalShift() {
+        name = "Vertical Shift";
         key = "cipher";
     }
 

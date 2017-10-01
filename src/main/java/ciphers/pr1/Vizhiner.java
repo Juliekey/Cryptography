@@ -1,17 +1,15 @@
 package ciphers.pr1;
 
 
-import ciphers.Cipher;
 import ciphers.Constants;
+import entities.Cipher;
 import javafx.util.Pair;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class Vizhiner extends Cipher {
     private int keyLength;
 
     public Vizhiner() {
+        name = "Vizhiner";
         key = "cipher";
         keyLength = key.length();
 

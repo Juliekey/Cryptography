@@ -1,7 +1,7 @@
 package ciphers.pr2;
 
-import ciphers.Cipher;
 import ciphers.util.ArraysHelper;
+import entities.Cipher;
 import javafx.util.Pair;
 
 public class DoubleShift extends Cipher {
@@ -9,6 +9,7 @@ public class DoubleShift extends Cipher {
     private static final char REPLACEMENT = '_';
 
     public DoubleShift() {
+        name = "Double Shift";
         key = "table size: " + TABLE_SIZE + ", rows exchanges: 1<->2, 2<->4, columns exchanges: 3<->4, 2<->3, 1<->2";
     }
 

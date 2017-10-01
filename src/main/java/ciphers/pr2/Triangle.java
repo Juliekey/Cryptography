@@ -2,13 +2,10 @@ package ciphers.pr2;
 
 import com.sun.jmx.remote.internal.ArrayQueue;
 
-import javax.crypto.Cipher;
-import javax.crypto.CipherSpi;
-import java.security.Provider;
-import java.util.TreeMap;
 import java.util.Map;
+import java.util.TreeMap;
 
-public class Triangle extends ciphers.Cipher{
+public class Triangle extends entities.Cipher {
     /*   char[][] arr = {  {'h'},
                       {'y', 'd'},
                      {'r','o','g'},
@@ -22,6 +19,10 @@ public class Triangle extends ciphers.Cipher{
     ArrayQueue<Character> keyqueue;
     Map<Character , String> columns;
     StringBuffer column;
+
+    public Triangle() {
+        name = "Triangle Cipher";
+    }
 
 
     public void createTriangle(String word){

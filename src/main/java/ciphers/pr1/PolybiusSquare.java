@@ -1,6 +1,6 @@
 package ciphers.pr1;
 
-import ciphers.Cipher;
+import entities.Cipher;
 import javafx.util.Pair;
 
 import java.util.HashMap;
@@ -10,6 +10,7 @@ public class PolybiusSquare extends Cipher {
     Map<Character, String> polibiusMap = new HashMap<>();
 
     public PolybiusSquare() {
+        name = "Polybius Square";
         polibiusMap.put('a', "11");
         polibiusMap.put('b', "12");
         polibiusMap.put('c', "13");

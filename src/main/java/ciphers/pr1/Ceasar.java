@@ -1,10 +1,14 @@
 package ciphers.pr1;
 
-import ciphers.Cipher;
 import ciphers.Constants;
+import entities.Cipher;
 import javafx.util.Pair;
 
 public class Ceasar extends Cipher {
+
+    public Ceasar() {
+        name = "Caesar";
+    }
 
     public String encrypt(String word) {
         int shift = 3;

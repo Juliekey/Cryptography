@@ -1,8 +1,8 @@
 package ciphers.pr2;
 
-import ciphers.Cipher;
 import ciphers.Constants;
 import ciphers.util.ArraysHelper;
+import entities.Cipher;
 import javafx.util.Pair;
 
 import java.util.Arrays;
@@ -15,6 +15,7 @@ public class CardanGrille extends Cipher {
     private static final int TABLE_SIZE = 4;
 
     public CardanGrille() {
+        name = "Cardan Grille";
         key = Arrays.deepToString(grille);
     }
 

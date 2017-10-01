@@ -1,7 +1,7 @@
 package ciphers.pr1;
 
-import ciphers.Cipher;
 import ciphers.Constants;
+import entities.Cipher;
 import javafx.util.Pair;
 
 public class Hill extends Cipher {
@@ -12,6 +12,7 @@ public class Hill extends Cipher {
     private int[][] keyMatrix = {{6, 24, 1}, {13, 16, 10}, {20, 17, 15}};
 
     public Hill() {
+        name = "Hill";
         key = "gybnqkurp";
     }
 

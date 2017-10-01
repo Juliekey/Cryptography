@@ -1,7 +1,7 @@
 package ciphers.pr1;
 
-import ciphers.Cipher;
 import ciphers.Constants;
+import entities.Cipher;
 import javafx.util.Pair;
 
 public class Combined extends Cipher {
@@ -11,6 +11,7 @@ public class Combined extends Cipher {
                     {'o', 'q', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'}};
 
     public Combined() {
+        name = "Combined";
         key = "cipher";
     }
 

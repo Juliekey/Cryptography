@@ -1,7 +1,7 @@
 package ciphers.main;
 
-import ciphers.*;
-import ciphers.pr2.*;
+import ciphers.pr2.CardanGrille;
+import entities.Cipher;
 
 public class Main {
     public static void main(String[] args) {

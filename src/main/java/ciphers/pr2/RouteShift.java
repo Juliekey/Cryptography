@@ -1,9 +1,14 @@
 package ciphers.pr2;
 
-import ciphers.Cipher;
+import entities.Cipher;
 
 public class RouteShift extends Cipher {
     char[][] table = new char[4][5];
+
+    public RouteShift() {
+
+        name = "Rout Shift";
+    }
 
     private  void add(StringBuffer sb){
         for (int i = 0; i < table.length; i++){

@@ -1,8 +1,8 @@
 package ciphers.pr2;
 
-import ciphers.Cipher;
 import ciphers.Constants;
 import ciphers.util.ArraysHelper;
+import entities.Cipher;
 import javafx.util.Pair;
 
 import java.awt.*;
@@ -18,6 +18,7 @@ public class MagicSquare extends Cipher {
 
 
     public MagicSquare() {
+        name = "Magic Square";
         key = Arrays.deepToString(MAGIC_SQUARE);
         formLettersCoordinatesMap();
     }

@@ -1,7 +1,7 @@
 package ciphers.pr2;
 
-import ciphers.Cipher;
 import ciphers.Constants;
+import entities.Cipher;
 import javafx.util.Pair;
 
 import java.util.Arrays;
@@ -13,6 +13,7 @@ public class BlockShift extends Cipher {
     private static final int BLOCK_SIZE = BLOCK_OF_CHANGES.length;
 
     public BlockShift() {
+        name = "Block Shift";
         key = Arrays.toString(BLOCK_OF_CHANGES);
     }
 

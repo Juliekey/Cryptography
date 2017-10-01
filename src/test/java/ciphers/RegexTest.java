@@ -1,9 +1,11 @@
 package ciphers;
 
-import jdk.nashorn.internal.runtime.regexp.joni.Regex;
+import entities.Cipher;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.util.regex.Pattern;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class RegexTest {
     protected static String word = "pedash";

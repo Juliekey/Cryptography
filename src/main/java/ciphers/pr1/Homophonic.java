@@ -1,7 +1,7 @@
 package ciphers.pr1;
 
-import ciphers.Cipher;
 import ciphers.Constants;
+import entities.Cipher;
 import javafx.util.Pair;
 
 import java.util.Random;
@@ -11,6 +11,11 @@ public class Homophonic extends Cipher {
     private static char[][] variants = new char[Constants.EN_ALPHABET_CNT][];
     private static Random rnd = new Random();
     public static  int[] frequency = {8, 1, 2, 4, 12, 2, 2, 6, 7, 0, 1, 4, 2, 7, 7, 2, 0, 6, 6, 9, 3, 1, 2, 0, 2, 0};
+
+    public Homophonic() {
+
+        name = "Homphonic";
+    }
 
     private String shuffle() {
         StringBuffer sb = new StringBuffer(Constants.ALPHABET);

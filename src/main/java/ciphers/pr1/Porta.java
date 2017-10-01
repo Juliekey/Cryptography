@@ -1,7 +1,7 @@
 package ciphers.pr1;
 
-import ciphers.Cipher;
 import ciphers.Constants;
+import entities.Cipher;
 import javafx.util.Pair;
 
 public class Porta extends Cipher {
@@ -23,6 +23,7 @@ public class Porta extends Cipher {
             {'z', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'a'}};
 
     public Porta() {
+        name = "Porta";
         key = "porta";
         keyLength = key.length();
     }

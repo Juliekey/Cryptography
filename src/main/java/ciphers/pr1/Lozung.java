@@ -1,7 +1,7 @@
 package ciphers.pr1;
 
-import ciphers.Cipher;
 import ciphers.Constants;
+import entities.Cipher;
 import javafx.util.Pair;
 
 public class Lozung extends Cipher {
@@ -9,6 +9,7 @@ public class Lozung extends Cipher {
             'l', 'm', 'n', 'o', 'q', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
 
     public Lozung() {
+        name = "Lozung";
         key = "cipher";
     }
 

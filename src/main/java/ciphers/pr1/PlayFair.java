@@ -1,7 +1,7 @@
 package ciphers.pr1;
 
-import ciphers.Cipher;
 import ciphers.Constants;
+import entities.Cipher;
 import javafx.util.Pair;
 
 import java.awt.*;
@@ -19,6 +19,7 @@ public class PlayFair extends Cipher {
     public static final char REPLACEMENT = 'x';
 
     public PlayFair() {
+        name = "Play Fair";
         key = "cipher";
     }
 

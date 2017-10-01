@@ -30,6 +30,7 @@ public class ArraysHelper {
             T temp = table[j][c1];
             table[j][c1] = table[j][c2];
             table[j][c2] = temp;
+
         }
     }
 

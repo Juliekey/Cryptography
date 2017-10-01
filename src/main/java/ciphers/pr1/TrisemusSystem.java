@@ -1,10 +1,11 @@
 package ciphers.pr1;
 
-import ciphers.Cipher;
+import entities.Cipher;
 import javafx.util.Pair;
 
 public class TrisemusSystem extends Cipher {
     public TrisemusSystem() {
+        name = "Trisemus System";
         key = "трисемус";
     }
 
