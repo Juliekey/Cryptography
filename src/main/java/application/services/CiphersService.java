@@ -2,6 +2,8 @@ package application.services;
 
 import ciphers.pr1.*;
 import ciphers.pr2.*;
+import ciphers.pr3.GammaModule2;
+import ciphers.pr3.GammaModuleN;
 import entities.Cipher;
 import entities.Lab;
 import lombok.Getter;
@@ -50,6 +52,10 @@ public class CiphersService {
         ciphers.put(20, new RoadCrossing());
         ciphers.put(21, new VerticalShift());
         allLabs.put(2, new Lab("Lab2", Collections.unmodifiableMap(ciphers)));
+        ciphers = new HashMap<>();
+        ciphers.put(22, new GammaModule2());
+        ciphers.put(23, new GammaModuleN());
+        allLabs.put(3, new Lab("Lab3", Collections.unmodifiableMap(ciphers)));
         return allLabs;
     }
 
