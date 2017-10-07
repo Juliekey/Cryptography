@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cryptography</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+<h1 align="center">Results:</h1>
+<h2 th:inline='text'>Cipher: [[${cipher}]]</h2>
+<h2 th:inline='text'>Word: [[${word}]]</h2>
+<h2 th:inline='text'>Encrypted: [[${encrypted}]]</h2>
+<h2 th:inline='text'>Key: [[${key}]]</h2>
+<h2>Table of changes:</h2>
+<table class="table table-hover table-striped">
+    <thead>
+    <tr>
+        <th>previous</th>
+        <th>new</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="pair : ${tableOfChange}">
+        <td th:text="${pair.key}"></td>
+        <td th:text="${pair.value}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

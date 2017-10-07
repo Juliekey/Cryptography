@@ -1,0 +1,55 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cryptography</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+<form action="#" th:object="${encryptdto}" th:action="@{/getResult}" th:method="post">
+    <div class="row">
+        <!-- uncomment code for absolute positioning tweek see top comment in css -->
+        <!-- <div class="absolute-wrapper"> </div> -->
+        <!-- Menu -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <!-- It can be fixed with bootstrap affix http://getbootstrap.com/javascript/#affix-->
+                    <div id="sidebar" class="well sidebar-nav">
+                        <div th:each="lab : ${labs}">
+                            <h5 th:text="${lab.value.name}"><i class="glyphicon glyphicon-home"></i>
+                                <small><b></b></small>
+                            </h5>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li th:each="cipher : ${lab.value.ciphers}"><input type="radio" th:field="*{id}"
+                                                                                   th:value="${cipher.key}"
+                                                                                   th:text="${cipher.value.name}"/>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <!-- Content Here -->
+                    <br/>
+
+                    <label for="word">Text: </label>
+                    <input type="text" class="form-control" id="word" th:field="*{word}"/>
+                    <br/>
+                    <button type="submit" class="btn btn-success">Encrypt</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- Main Content -->
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
