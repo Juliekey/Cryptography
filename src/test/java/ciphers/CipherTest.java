@@ -11,6 +11,8 @@ public abstract class CipherTest {
     @Test
     public void encryptSurname() {
         String encrypted = cipher.encrypt(word);
+//        System.out.println(result);
+//        System.out.println(encrypted);
         assert encrypted.equals(result);
     }
 }

@@ -6,7 +6,6 @@ import ciphers.pr3.GammaModule2;
 import ciphers.pr3.GammaModuleN;
 import entities.Cipher;
 import entities.Lab;
-import lombok.Getter;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
@@ -15,17 +14,9 @@ import java.util.Map;
 
 @Service
 public class CiphersService {
-    @Getter
-    private Map<Integer, Lab> allLabs;
-    @Getter
-    private Map<Integer, Cipher> allCiphers;
 
-    public CiphersService() {
-        allLabs = Collections.unmodifiableMap(createAllLabs());
-        allCiphers = Collections.unmodifiableMap(createAllCiphers());
-    }
 
-    private Map<Integer, Lab> createAllLabs() {
+    public Map<Integer, Lab> getAllLabs() {
         Map<Integer, Lab> allLabs = new HashMap<>();
         Map<Integer, Cipher> ciphers = new HashMap();
         ciphers.put(1, new Ceasar());
@@ -59,9 +50,9 @@ public class CiphersService {
         return allLabs;
     }
 
-    public Map<Integer, Cipher> createAllCiphers() {
+    public Map<Integer, Cipher> getAllCiphers() {
         Map<Integer, Cipher> allCiphers = new HashMap<>();
-        for (Map.Entry<Integer, Lab> entry : allLabs.entrySet()) {
+        for (Map.Entry<Integer, Lab> entry : getAllLabs().entrySet()) {
             allCiphers.putAll(entry.getValue().getCiphers());
         }
         return allCiphers;

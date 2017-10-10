@@ -31,7 +31,7 @@ public class TrisemusSystem extends Cipher {
                                 matrix[0][k] : matrix[j + 1][k];
 
                         encrypted.append(newChar);
-                        tableOfChange.add(new Pair<String, String>(String.valueOf(word.charAt(i)), String.valueOf(newChar)));
+                        tableOfChange.add(new Pair<>(String.valueOf(word.charAt(i)), String.valueOf(newChar)));
                         found = true;
                         break;
                     }
