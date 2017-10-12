@@ -39,9 +39,10 @@ public class SimpleShift extends Cipher {
         char[] result = new char[word.length()];
         for (int i = 0; i < word.length(); i++){
             result[order[i]] = word.charAt(i);
-            tableOfChange.add(new Pair<String, String>(String.valueOf(word.charAt(i)), String.valueOf(word.charAt(order[i]))));
         }
-
+        for (int i = 0; i < word.length(); i++){
+            tableOfChange.add(new Pair<String, String>(String.valueOf(word.charAt(i)), String.valueOf(result[i])));
+        }
         return String.valueOf(result);
     }
 }
