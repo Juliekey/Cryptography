@@ -34,7 +34,7 @@ public class RSA extends Cipher implements Decryptor {
     public void generateKeys(BigInteger p, BigInteger q) {
 
         if (!q.isProbablePrime(25) || !p.isProbablePrime(25))
-            throw new IllegalArgumentException("parameters not equals");
+            throw new IllegalArgumentException("parameters are not equal");
 
         modus = p.multiply(q);
         phi = p.subtract(BigInteger.ONE).multiply(q.subtract(BigInteger.ONE));
@@ -102,7 +102,7 @@ public class RSA extends Cipher implements Decryptor {
         try {
             message = new BigInteger(msg.getBytes("ISO-8859-1"));
             if (message.compareTo(m) > 0) {
-                throw new IllegalArgumentException("message too long");
+                throw new IllegalArgumentException("message is too long");
             }
             result = new String(message.modPow(pKey, m).toByteArray(), "ISO-8859-1");
             formTableOfChanges(msg, result);
