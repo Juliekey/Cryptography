@@ -16,10 +16,11 @@ public class Elgamal extends Cipher{
     static int[] arr = {p, g, y};
     int[] values;
     int[] result;
+    int a;
 
     public Elgamal(){
         name = "El Gamal";
-        key = Arrays.toString(arr);
+        key = getKey();
     }
 
     private static boolean isPrime(int p) {
@@ -95,12 +96,19 @@ public class Elgamal extends Cipher{
         }
         return order;
     }
+
+    @Override
+    public String getKey() {
+        return "Public key : " + Arrays.toString(arr) + ", private key: " + String.valueOf(x);
+    }
+
     @Override
     public String encrypt(String word) {
         Random rand = new Random();
         values = createOrder(word);
         result = new int[word.length()];
         int k = rand.nextInt(p-2)+1;
+        a = (int)Math.pow(g,k)%p;
         for(int i = 0; i < values.length; i++) {
             long pow = (long) Math.pow(y,k);
             BigInteger val = BigInteger.valueOf(pow*values[i]);
@@ -109,6 +117,15 @@ public class Elgamal extends Cipher{
             tableOfChange.add(new Pair<String, String>(String.valueOf(word.charAt(i)), String.valueOf(result[i])));
         }
         return Arrays.toString(result);
+    }
+    public String decrypt() {
+        StringBuffer sb = new StringBuffer();
+        int value;
+        for(int i = 0; i < result.length; i++) {
+            value = result[i]*(int)Math.pow(a, p-1-x)%p;
+            sb.append(Constants.ALPHABET.charAt(value));
+        }
+        return sb.toString();
     }
 }
 
