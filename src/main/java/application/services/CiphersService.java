@@ -5,9 +5,10 @@ import ciphers.pr2.*;
 import ciphers.pr3.GammaModule2;
 import ciphers.pr3.GammaModuleN;
 import ciphers.pr4.ADFGX;
-import ciphers.pr5.RSA;
 import ciphers.pr5.Elgamal;
 import ciphers.pr5.Knapsack;
+import ciphers.pr5.RSA;
+import ciphers.pr6.MD5;
 import entities.Cipher;
 import entities.Lab;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,7 @@ public class CiphersService {
 
     public Map<Integer, Lab> getAllLabs() {
         Map<Integer, Lab> allLabs = new HashMap<>();
-        Map<Integer, Cipher> ciphers = new HashMap();
+        Map<Integer, Cipher> ciphers = new HashMap<>();
         ciphers.put(1, new Ceasar());
         ciphers.put(2, new Combined());
         ciphers.put(3, new Hill());
@@ -59,6 +60,9 @@ public class CiphersService {
         ciphers.put(26, new Knapsack());
         ciphers.put(27, new Elgamal());
         allLabs.put(5, new Lab("Lab5", Collections.unmodifiableMap(ciphers)));
+        ciphers = new HashMap<>();
+        ciphers.put(28, new MD5());
+        allLabs.put(6, new Lab("Lab6", Collections.unmodifiableMap(ciphers)));
         return allLabs;
     }
 
