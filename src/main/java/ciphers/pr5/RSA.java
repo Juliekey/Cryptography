@@ -15,11 +15,19 @@ public class RSA extends Cipher implements Decryptor {
     private BigInteger phi;
     private static final int BIT_LENGTH = 512;
 
+
     public RSA() {
         name = "RSA";
         generateKeys(BIT_LENGTH);
     }
 
+    public BigInteger getPublicKey() {
+        return publicKey;
+    }
+
+    public BigInteger getSecretKey() {
+        return secretKey;
+    }
     public void generateKeys(int bitLength) {
 
         BigInteger p = generatePrime(bitLength / 2);
