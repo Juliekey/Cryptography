@@ -1,5 +1,6 @@
 package ciphers.pr5;
 
+import ciphers.Constants;
 import entities.Cipher;
 import javafx.util.Pair;
 
@@ -8,9 +9,8 @@ import java.util.stream.IntStream;
 
 public class Knapsack extends Cipher{
     static int[] weight = {2, 5, 8, 21, 40, 92, 174};
-    static int[] prime = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101};
     static Random rnd = new Random();
-    static int n = prime[rnd.nextInt(prime.length)-1];
+    static int n = Constants.PRIME[rnd.nextInt(Constants.PRIME.length)-1];
     static int m = rnd.nextInt(100)+IntStream.of(weight).sum();
     static int[] result;
     String binary;
