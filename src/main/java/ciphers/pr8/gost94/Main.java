@@ -1,21 +1,22 @@
-package ciphers.pr7.Shnorr;
+package ciphers.pr8.gost94;
+
+import java.math.BigInteger;
+import java.util.Random;
 
 public class Main {
-
     public static void main(String[] args) {
+
         ClientA a = new ClientA();
-        ClientB b = new ClientB();
         a.generate();
+        ClientB b = new ClientB();
         getResult(a, b, "pri");
     }
     public static void getResult(ClientA a, ClientB b, String word){
         StringBuffer sb = new StringBuffer();
+        boolean res;
         for(int i = 0; i < word.length(); i++){
-            a.setR(word.charAt(i));
-            b.setE();
-            a.setS(b.getE());
-            sb.append(a.getR());
-            boolean res = b.authentificate(a.getR(), a.getG(), a.getS(), a.getY());
+            a.send(word.charAt(i));
+            res = b.authentificate(word.charAt(i), a.getQ(), a.getS(), a.getR1(), a.getG(), a.getY(), a.getP());
             System.out.println(res);
         }
         System.out.println(sb);

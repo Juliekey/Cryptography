@@ -7,18 +7,29 @@ import java.util.Random;
 
 public class ClientA {
     Random rnd = new Random();
-    BigInteger r;
-    int k, s;
-    int p, q, g, x, y;
+    protected BigInteger r;
+    protected int k, s;
+    protected int g, x, y;
+    protected int q = 29;
+    protected int p = 59;
 
-    public int generate(){
-        q = 29;
-        p = 59;
-        x = rnd.nextInt(q-1)+1;
+    public void generate(){
+        x = calculateX(q);
+        g = calculateG(q, p, 20);
+        y = calculateY(g, x, p);
+    }
+
+    public int calculateX(int q) {
+        return rnd.nextInt(q-1)+1;
+    }
+    public int calculateG(int q, int p, int bound) {
         do{
-            g = rnd.nextInt(20);
+            g = rnd.nextInt(bound);
         }
         while (Math.pow(g, q)%p!=1);
+        return g;
+    }
+    public int calculateY(int g, int x, int p) {
         do{
             y = rnd.nextInt(100);
         }
@@ -48,5 +59,13 @@ public class ClientA {
     }
     public int getY() {
         return y;
+    }
+
+    public int getQ() {
+        return q;
+    }
+
+    public int getP() {
+        return p;
     }
 }
