@@ -16,8 +16,7 @@ public class Main {
             a.setS(b.getE());
             sb.append(a.getR());
             boolean res = b.authentificate(a.getR(), a.getG(), a.getS(), a.getY());
-            System.out.println(res);
         }
-        System.out.println(sb);
+        System.out.println("Encrypted:" + sb);
     }
 }

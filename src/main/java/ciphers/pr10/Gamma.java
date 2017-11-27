@@ -4,10 +4,16 @@ package ciphers.pr10;
 public class Gamma{
 
     public static void main(String[] args) {
-        String encrypted = encrypt("pri", "cip", "ped", "lyo");
-        String res = encrypt(encrypted, "cip", "ped", "lyo");
-        System.out.println(encrypted+" "+toBin(encrypted));
-        System.out.println(res+" "+toBin(res));
+        String word = "pri";
+        String gamma1 = "cip";
+        String gamma2 = "ped";
+        String gamma3 = "lyo";
+        System.out.println("Word: "+word);
+        System.out.println("Gamma: "+gamma1+", "+gamma2+", "+gamma3);
+        String encrypted = encrypt(word, gamma1, gamma2, gamma3);
+        String res = encrypt(encrypted, gamma1, gamma2, gamma3);
+        System.out.println("Encrypted: "+encrypted+" "+toBin(encrypted));
+        System.out.println("Decrypted: "+res+" "+toBin(res));
     }
     public static String encrypt(String word, String... gamma) {
         String[] binary1, binary2, binary3, binary4;

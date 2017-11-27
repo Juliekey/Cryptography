@@ -9,10 +9,12 @@ public class AsmutBlum {
     static Random rnd;
     static int[] k, numbers;
     static int p = 37;
-    public static void main(String[] args) {
 
-        encrypt("p");
-        System.out.println(decrypt());
+    public static void main(String[] args) {
+        String word = "p";
+        System.out.println("Word: "+word);
+        encrypt(word);
+        System.out.println("Result: "+Constants.ALPHABET.charAt(decrypt()));
     }
     public static void encrypt(String word) {
         rnd = new Random();

@@ -68,7 +68,7 @@ public class ECC {
         if(error_location != 0) {
             System.out.println("Error is at location " + error_location + ".");
             a[error_location-1] = (a[error_location-1]+1)%2;
-            System.out.println("Corrected code is:");
+            System.out.println("Corrected code:");
             for(int i=0 ; i < a.length ; i++) {
                 System.out.print(a[a.length-i-1]);
             }
@@ -77,7 +77,7 @@ public class ECC {
         else {
             System.out.println("There is no error in the received data.");
         }
-        System.out.println("Original data sent was:");
+        System.out.println("Original data:");
         power = parity_count-1;
         for(int i=a.length ; i > 0 ; i--) {
             if(Math.pow(2, power) != i) {

@@ -16,8 +16,7 @@ public class Main {
             sb.append(a.getZ());
             a.getRorY(b.getRandomBit(), s.getS(), s.getP());
             boolean res = b.authentificate(a.getZ(), a.getY(), s.getV(), s.getP(), a.getR());
-            System.out.println(res);
         }
-        System.out.println(sb);
+        System.out.println("Encrypted:" + sb);
     }
 }

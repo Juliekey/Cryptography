@@ -5,19 +5,16 @@ import ciphers.Constants;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class ClientA extends ciphers.pr7.Shnorr.ClientA {
     Random rnd = new Random();
+    ArrayList<Integer[]> m = new ArrayList<>();
     int h, r1;
     char message;
-    public int checkDivision(){
-        do{
-            q = rnd.nextInt(p-1)+1;
-        }
-        while((p-1)%q!=0);
-        return q;
-    }
     @Override
     public int calculateY(int g, int x, int p) {
         y = (int)Math.pow(g, x)%p;
@@ -25,10 +22,14 @@ public class ClientA extends ciphers.pr7.Shnorr.ClientA {
     }
     @Override
     public void generate(){
-        q =checkDivision();
         g = calculateG(q, p, p);
         x = calculateX(q);
         y = calculateY(g, x, p);
+        System.out.println("q="+q);
+        System.out.println("g="+g);
+        System.out.println("x="+x);
+        System.out.println("y="+y);
+        System.out.println();
     }
 
     public void send(char ch){
@@ -39,6 +40,7 @@ public class ClientA extends ciphers.pr7.Shnorr.ClientA {
                 setS();
             }
             while(r1==0||s==0);
+        System.out.println("("+r1+", "+s+")");
     }
     public void setR(){
         k = rnd.nextInt(q);
@@ -55,5 +57,9 @@ public class ClientA extends ciphers.pr7.Shnorr.ClientA {
 
     public char getMessage() {
         return message;
+    }
+
+    public ArrayList<Integer[]> getM() {
+        return m;
     }
 }
